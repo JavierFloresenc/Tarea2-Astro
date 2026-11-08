@@ -1,0 +1,46 @@
+---
+const usuarioPorDefecto = "Carlos";
+---
+{/* 
+// Tarjeta de react que vamos a traducir a Astro
+export default function TarjetaReact() {
+  const usuario = "Carlos";
+  const mostrarAlerta = () => alert("Hola " + usuario);
+  return (
+    <div className="tarjeta-usuario" tabIndex={0}>
+      <label htmlFor="apodo" className="etiqueta">Apodo:</label>
+      <input id="apodo" type="text" />
+      <button onClick={mostrarAlerta} className="btn">Saludar</button>
+    </div>
+  );
+ */}
+
+  {/*Para poder pasar a astro  eliminamos export default function y return,
+   pasamos las variables arriba entre los guiones ---, 
+   cambiamos className por class, tabIndex por tabindex, 
+   htmlFor por for, cerramos el <input /> y 
+   movemos el evento onClick a una etiqueta 
+   scripts
+  */}
+<div class="tarjeta-usuario" tabindex="0">
+  {/* Comentario privado: no saldrá en el HTML de dist/ */}
+  <!-- Comentario público: sí saldrá en el HTML de dist/ -->
+  
+  <label for="apodo" class="etiqueta">Apodo:</label>
+  <input id="apodo" type="text" placeholder={usuarioPorDefecto} />
+  
+  <button id="btn-saludar" data-defecto={usuarioPorDefecto} class="btn">Saludar</button>
+</div>
+
+<script>
+  const btn = document.getElementById("btn-saludar");
+  const inputApodo = document.getElementById("apodo") as HTMLInputElement;
+
+  btn?.addEventListener("click", () => {
+    const nombreEscrito = inputApodo.value.trim();
+    const nombreFinal = nombreEscrito !== "" ? nombreEscrito : btn.dataset.defecto;
+
+    alert("Hola " + nombreFinal);
+  });
+</script>
+

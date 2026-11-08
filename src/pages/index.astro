@@ -1,11 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Tarjeta from '../components/Tarjeta.astro';
+import ErrorDeCierre from '../assets/ErrorDeCierre.png';
+import BuenaPractica from '../assets/BuenaPractica.png';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+		<h1>
+		Ejercicios del capitulo 10
+	  </h1>
 	<!-- <label htmlFor="email" className="campo">Correo</label> -->
 	<!-- lo que esta mal es que primero  "htmlFor" esta sintaxis del camelcase es de React en Astro es for -->
 	<!-- Otro error es que "className" en Astro se escribe como "class" -->
@@ -13,4 +18,18 @@ import Layout from '../layouts/Layout.astro';
 	 <label for="email" class="campo">Así esta bien hecho</label> 
 	 <!-- Este comentario es público -->
 	  {/* Este comentario es privado */}
+	  <Tarjeta />
+	  <h1>
+		Ejercicios del capitulo 11
+	  </h1>
+	  <h2>Ejercicio 1</h2>
+	  <section>
+		  <img src={ErrorDeCierre.src} alt="Error de NO cierre" />
+		  <p>Ya se probo el section sin cerrar, y nos ese mensaje que el indica que no se pudo ejecutar porque no se cerro correctamente la etiqueta</p>
+	  </section>
+	  <h2>Ejercicio 2</h2>
+	  <p><div>Hola</div></p>
+	  <img src={BuenaPractica.src} alt="">
+	  <p>El arbol quedo creando dos etiquetas p y un div y este con el hola , lo que se deberia hacer es crear un div y adentro la etiqueta de parrafo</p>
+	  
 </Layout>
