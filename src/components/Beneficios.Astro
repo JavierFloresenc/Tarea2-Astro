@@ -1,0 +1,21 @@
+---
+const beneficios = [
+  { titulo: "Envío gratis", detalle: "En todos tus pedidos mayores a S/ 50." },
+  { titulo: "Café de altura", detalle: "Cultivado a más de 1,800 m s. n. m. en Cajamarca." },
+  { titulo: "Tostado fresco", detalle: "Tostamos los granos cada semana." },
+  { titulo: "Comercio justo", detalle: "Trato directo con productores locales." },
+];
+---
+<section>
+  <h2>Nuestros Beneficios</h2>
+  <dl>
+    {beneficios.map((b) => {
+    return (
+        <>
+        <dt><strong>{b.titulo}</strong></dt>
+        <dd>{b.detalle}</dd>
+        </>
+    );
+    })}
+  </dl>
+</section>

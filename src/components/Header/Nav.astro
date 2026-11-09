@@ -1,0 +1,10 @@
+---
+const enlaces = [
+  { texto: "Inicio", url: "/" },
+  { texto: "Carta", url: "/carta" },
+  { texto: "Contacto", url: "/contacto" },
+];
+---
+<nav>
+  {enlaces.map((e) => <a href={e.url}>{e.texto}</a>)}
+</nav>

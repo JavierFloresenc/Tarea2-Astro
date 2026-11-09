@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Tarjeta from '../components/Tarjeta.astro';
 import ErrorDeCierre from '../assets/ErrorDeCierre.png';
 import BuenaPractica from '../assets/BuenaPractica.png';
+import Banner from "../components/Banner.astro";
+import Header from "../components/Header/Header.astro";
+import Beneficios from "../components/Beneficios.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -32,18 +35,31 @@ import BuenaPractica from '../assets/BuenaPractica.png';
 	  <img src={BuenaPractica.src} alt="">
 	  <p>El arbol quedo creando dos etiquetas p y un div y este con el hola , lo que se deberia hacer es crear un div y adentro la etiqueta de parrafo</p>
 	  <h2>Ejercicio 3</h2>
-	  	<!-- PROBLEMA: Se ve "JuanPérez" pegado -->
+	  	{/*  PROBLEMA: Se ve "JuanPérez" pegado */}
 		<p>
 		<span>Juan</span>
 		<span>Pérez</span>
 		</p>
 
-		<!-- SOLUCIÓN 1: Inyectar el espacio con {" "} al estilo JSX -->
+		{/* SOLUCIÓN 1: Inyectar el espacio con {" "} al estilo JSX */}
 		<p>
 		<span>Juan</span>{" "}
 		<span>Pérez</span>
 		</p>
 
-		<!-- SOLUCIÓN 2: Escribir ambos elementos en la misma línea -->
+		{/* SOLUCIÓN 2: Escribir ambos elementos en la misma línea */}
 		<p><span>Juan</span> <span>Pérez</span></p>
+		<h1>Ejercicios del capitulo 12</h1>
+		<h2>Ejercicio 1</h2>
+		<p> Saca el nav del Header a su propio componente Nav.astro e impórtalo dentro 
+		de Header.astro </p>
+		<!-- Solo lo llamas; si en Banner.astro es true se verá, si es false no -->
+    <Banner />
+    <Header />
+		<h2>Ejercicio 3</h2>
+		<!-- se cambio a un compenente para tener un poco más de orden -->
+		 
+		<Beneficios />
+
+
 </Layout>
